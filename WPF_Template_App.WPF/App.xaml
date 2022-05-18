@@ -46,6 +46,7 @@
             </ResourceDictionary.MergedDictionaries>
 
             <converters:WidthAndHeightToRectConverter x:Key="WidthAndHeightToRectConverter"/>
+            <converters:StringToWindowStateConverter x:Key="StringToWindowStateConverter"/>
 
         </ResourceDictionary>
     </Application.Resources>

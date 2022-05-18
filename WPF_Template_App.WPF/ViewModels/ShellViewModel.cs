@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace WPF_Template_App.WPF.ViewModels
 {
-    public class ShellViewModel
+    public class ShellViewModel : BaseViewModel
     {
+        private string appTitle = "Template Window";
+
+        public string AppTitle
+        {
+            get { return appTitle; }
+            set 
+            { 
+                if (value != null && value != String.Empty)
+                {
+                    appTitle = value;
+                    OnPropertyChanged("AppTitle");
+                }
+            }
+        }
+
     }
 }

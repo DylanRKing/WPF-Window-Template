@@ -12,7 +12,7 @@ namespace WPF_Template_App.WPF.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.1.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.2.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,9 +26,9 @@ namespace WPF_Template_App.WPF.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("800")]
-        public int Width {
+        public double Width {
             get {
-                return ((int)(this["Width"]));
+                return ((double)(this["Width"]));
             }
             set {
                 this["Width"] = value;
@@ -38,12 +38,48 @@ namespace WPF_Template_App.WPF.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("450")]
-        public int Height {
+        public double Height {
             get {
-                return ((int)(this["Height"]));
+                return ((double)(this["Height"]));
             }
             set {
                 this["Height"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Top {
+            get {
+                return ((double)(this["Top"]));
+            }
+            set {
+                this["Top"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Left {
+            get {
+                return ((double)(this["Left"]));
+            }
+            set {
+                this["Left"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+        public string WindowState {
+            get {
+                return ((string)(this["WindowState"]));
+            }
+            set {
+                this["WindowState"] = value;
             }
         }
     }

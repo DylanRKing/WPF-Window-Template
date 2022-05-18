@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:WPF_Template_App.WPF"
         xmlns:vm="clr-namespace:WPF_Template_App.WPF.ViewModels"
         xmlns:p="clr-namespace:WPF_Template_App.WPF.Properties"
+        xmlns:converters="clr-namespace:WPF_Template_App.WPF.Converters"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -21,7 +22,7 @@
         Width="{Binding Source={x:Static p:Settings.Default}, Path=Width, Mode=TwoWay}"
         Left="{Binding Source={x:Static p:Settings.Default}, Path=Left, Mode=TwoWay}"
         Top="{Binding Source={x:Static p:Settings.Default}, Path=Top, Mode=TwoWay}"
-        WindowState="{Binding Source={x:Static p:Settings.Default}, Path=WindowState, Mode=TwoWay}" 
+        WindowState="{Binding Source={x:Static p:Settings.Default}, Path=WindowState, Mode=TwoWay, Converter={StaticResource StringToWindowStateConverter}}" 
         Closed="Window_Closed">
 
     <WindowChrome.WindowChrome>
@@ -44,7 +45,8 @@
 
     <Border x:Name="WindowContainer"
             Background="{DynamicResource MaterialDesignBackground}"
-            Style="{StaticResource ShellStyle}">
+            Style="{StaticResource ShellStyle}"
+            DataContext="{StaticResource vM}">
 
         <Border.Effect>
             <DropShadowEffect BlurRadius="5" Color="#555" Direction="-90" Opacity="0.6" ShadowDepth="3"/>
@@ -53,7 +55,7 @@
         <Grid>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="32"/>
                 <RowDefinition  Height="*"/>
             </Grid.RowDefinitions>
 
@@ -61,26 +63,34 @@
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="40"/>
                     <ColumnDefinition Width="40"/>
                     <ColumnDefinition Width="40"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Column="0"
-                           Text="Window Title"/>
+                <Image Source="{Binding AppLogo, FallbackValue={x:Null}}" 
+                       MaxWidth="28" 
+                       MaxHeight="28"
+                       Margin="2 2 7 2"/>
 
-                <Button Grid.Column="2"
-                        WindowChrome.IsHitTestVisibleInChrome="True"
-                        Style="{StaticResource MaterialWindowButton}"
-                        Content="{materialDesign:PackIcon Kind=WindowMinimize}"/>
+                <TextBlock Grid.Column="1"
+                           Text="{Binding AppTitle}"
+                           Style="{DynamicResource MaterialDesignHeadline6TextBlock}"
+                           VerticalAlignment="Center"/>
 
                 <Button Grid.Column="3"
                         WindowChrome.IsHitTestVisibleInChrome="True"
                         Style="{StaticResource MaterialWindowButton}"
-                        Content="{materialDesign:PackIcon Kind=WindowMaximize}"/>
+                        Content="{materialDesign:PackIcon Kind=WindowMinimize}"/>
 
                 <Button Grid.Column="4"
+                        WindowChrome.IsHitTestVisibleInChrome="True"
+                        Style="{StaticResource MaterialWindowButton}"
+                        Content="{materialDesign:PackIcon Kind=WindowMaximize}"/>
+
+                <Button Grid.Column="5"
                         WindowChrome.IsHitTestVisibleInChrome="True"
                         Style="{StaticResource MaterialWindowCloseButton}"
                         Content="{materialDesign:PackIcon Kind=WindowClose}"/>
