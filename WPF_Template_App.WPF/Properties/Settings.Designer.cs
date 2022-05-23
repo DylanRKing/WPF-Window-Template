@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Windows;
+
 namespace WPF_Template_App.WPF.Properties {
     
     
@@ -74,9 +76,9 @@ namespace WPF_Template_App.WPF.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
-        public string WindowState {
+        public WindowState WindowState {
             get {
-                return ((string)(this["WindowState"]));
+                return ((WindowState)(this["WindowState"]));
             }
             set {
                 this["WindowState"] = value;

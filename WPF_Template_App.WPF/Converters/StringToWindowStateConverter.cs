@@ -9,7 +9,7 @@ using System.Windows.Data;
 
 namespace WPF_Template_App.WPF.Converters
 {
-    internal class StringToWindowStateConverter : IValueConverter
+    public class StringToWindowStateConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
