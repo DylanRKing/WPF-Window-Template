@@ -9,9 +9,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 
-                <materialDesign:CustomColorTheme BaseTheme="Dark" PrimaryColor="Gray" SecondaryColor="Orange" />
+                <materialDesign:CustomColorTheme BaseTheme="Dark" PrimaryColor="Turquoise" SecondaryColor="Orange" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-                
 
                 <ResourceDictionary Source="Styles/ButtonStyles.xaml"/>
 
